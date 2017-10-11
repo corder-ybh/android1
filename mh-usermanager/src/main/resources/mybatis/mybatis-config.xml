@@ -20,7 +20,9 @@
 			</dataSource>
 		</environment>
 	</environments -->
-	<mappers>
+	<!-- mapper也可以不配置，因为在spring和mybatis整合文件中会配置，在spring目录下 -->
+	<!--  mappers>
 		<package name="com.mh.mybatis.mapper"/>
-	</mappers>
+	</mappers -->
+	
 </configuration>
