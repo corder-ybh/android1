@@ -23,12 +23,16 @@
 		</tx:attributes>
 	</tx:advice>
 
-	<aop:config>
+<!-- spring框架两大功能IOC与AOP，不管那种，使用方法有两种，配置和注解，最佳实践
+IOC用注解，AOP用配置，IOC一般是注入，用配置很麻烦，用注解很方便，AOP如果添加事务，如果每一个
+都添加注解，很麻烦，用配置很方便，所有的方法都用这个配置-->
+	<aop:config><!-- aop是什么？ -->
 		<!--pointcut元素定义一个切入点，execution中的第一个星号 用以匹配方法的返回类型，
 			这里星号表明匹配所有返回类型。 com.abc.dao.*.*(..)表明匹配cn.itcast.mybatis.service包下的所有类的所有 
 			方法 -->
+		<!-- 创建一个com.mh.usermanager.service的包 -->
 		<aop:pointcut id="myPointcut" expression="execution(* com.mh.usermanager.service.*.*(..))" />
-		<!--将定义好的事务处理策略应用到上述的切入点 -->
+		<!--将定义好的事务处理策略应用到上述的切入点 --> <!-- 添加myPointcut切面 -->
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="myPointcut" />
 	</aop:config>
 	

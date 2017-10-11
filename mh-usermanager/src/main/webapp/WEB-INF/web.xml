@@ -35,7 +35,8 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
         
         <init-param>
         	<param-name>contextConfigLocation</param-name>
-        	<param-value>classpath:mh-usermanager-servlet.xml</param-value>
+        	<!-- 注意加上路径spring -->
+        	<param-value>classpath:spring/mh-usermanager-servlet.xml</param-value>
         </init-param> <!-- 顺序应该保证init在上，load在下 -->
         <load-on-startup>1</load-on-startup>
     </servlet>

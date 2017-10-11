@@ -3,13 +3,13 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<properties resource="jdbc.properties"/>
+	<!--  <properties resource="jdbc.properties"/> 交给spring来完成-->
 	<typeAliases>
 		<!-- 设置别名 -->
-		<package name="com.mh.mybatis.pojo"/>
+		<package name="com.mh.usermanager.pojo"/>
 	</typeAliases>
 	<!-- 配置数据库连接的环境 -->
-	<environments default="development">
+	<!-- environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC"/>
 			<dataSource type="POOLED">
@@ -19,7 +19,7 @@
 				<property name="password" value="${jdbc.password}"/>
 			</dataSource>
 		</environment>
-	</environments>
+	</environments -->
 	<mappers>
 		<package name="com.mh.mybatis.mapper"/>
 	</mappers>

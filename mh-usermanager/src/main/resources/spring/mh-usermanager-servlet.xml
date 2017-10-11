@@ -7,6 +7,8 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
     <!-- SpringMVC配置文件 -->
+    <!-- 都是干啥用的啊，最好能手动配置成功
+     -->
 	<!-- 注解驱动 -->
 	<mvc:annotation-driven/>
 	
@@ -17,7 +19,9 @@
 	<!-- 
 		Example: prefix="/WEB-INF/jsp/", suffix=".jsp", viewname="test" -> "/WEB-INF/jsp/test.jsp" 
 	 -->
+	 <!-- springwebmvc的第一个包的viewResolver.class用Ctrl+T找到实现这个接口的这个类，拷贝它的全路径 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- Example: prefix="/WEB-INF/jsp/", suffix=".jsp", viewname="test" -> "/WEB-INF/jsp/test.jsp"从它的父类的注释中找到 -->
 		<property name="prefix" value="/WEB-INF/views/"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>
